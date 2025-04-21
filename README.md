@@ -17,6 +17,11 @@ print(df[df.isnull().any(axis=1)])
 print(df.isnull().sum())
 # shows the total number of missing (NaN) values
 
+df['ORDERDATE'] = pd.to_datetime(df['ORDERDATE'], format='%m/%d/%Y %H:%M')
+df['ORDERDATE'] = df['ORDERDATE'].dt.strftime('%d-%m-%Y')
+# Parse the full format correctly
+# Then convert to dd-mm-yyyy as a string
+
 import numpy as np
 columns_to_clean = ['ADDRESSLINE2', 'STATE', 'POSTALCODE', 'TERRITORY']
 df[columns_to_clean] = df[columns_to_clean].replace(r'^\s*$', np.nan, regex=True)

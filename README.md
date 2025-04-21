@@ -1,4 +1,4 @@
-# elevate_labs_intership
+# elevate_labs_intership_task1
 import csv
 file_path = r"C:\Users\praba\Downloads\sales_data_sample.csv"
 # using import csv library to import the file(sales_data_sample.csv) using file path
